@@ -1,4 +1,4 @@
-# Google Contacts categorizer, fast
+#Google Contacts categorizer, fast
 #
 # The idea behind this script, is to be able to go through a .csv dump of your Google contacts and decide if you want to keep that contact or not, for now.
 #
@@ -8,6 +8,7 @@
 # $ ruby parser.rb
 
 require 'csv'
+# Line below opens pre-formatted clean_contacts.csv with the Headers already in it, so i dont have to deal with that bullshit while looping.
 CSV.open("clean_contacts.csv", "wb") do |new_csv|
   CSV.foreach("google.csv", headers: true) do |row|
     puts "#{row['Name']}, #{row['E-mail 1 - Value']}"
